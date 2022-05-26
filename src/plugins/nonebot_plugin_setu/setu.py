@@ -77,7 +77,7 @@ class Setu:
         ).format_map({
             "title": setu["title"],
             "painter": setu["painter"],
-            "pid": setu["pid"],
+            "pid": str(setu["pid"]),
             "illust_url": PixivApi.artworks + str(setu["pid"])
         })
 
