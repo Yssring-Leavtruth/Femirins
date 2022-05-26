@@ -7,8 +7,11 @@ from PIL import Image, ImageFont, ImageDraw
 from pathlib import Path
 
 
+plugin_path = Path("./src/plugins/nonebot_plugin_setu/image")
+
 def draw_text(target, text: str, size: int, position: tuple, color: tuple):
-    font = ImageFont.truetype("msyhbd.ttc", size)
+    font_path = plugin_path.joinpath("MSYHBD.TTC")
+    font = ImageFont.truetype(font_path.__str__(), size)
     draw = ImageDraw.Draw(target)
     draw.text(position, text=text, font=font, fill=color)
 
@@ -52,7 +55,6 @@ def circle_corner(img, radii):  # 把原图片变成圆角，这个函数是从�
 
 
 def draw(painters):
-    plugin_path = Path("./src/plugins/nonebot_plugin_setu/image")
     background = Image.open(plugin_path.joinpath("background.png"))
     number_mask = Image.open(plugin_path.joinpath("number_mask.png"))
 

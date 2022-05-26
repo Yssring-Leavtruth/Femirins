@@ -6,7 +6,9 @@ from io import BytesIO
 def draw_text(self, text, size, position, color):
 
     position = tuple([position[0], position[1] - 6])
-    font = ImageFont.truetype('msyhbd.ttc', size)
+    font_path = Path("./src/plugins/nonebot_plugin_bhxy_search/font").joinpath("MSYHBD.TTC")
+    print(font_path.__str__())
+    font = ImageFont.truetype(font_path.__str__(), size)
     draw = ImageDraw.Draw(self)
     draw.text(position, text=text, font=font, fill=color)
 
