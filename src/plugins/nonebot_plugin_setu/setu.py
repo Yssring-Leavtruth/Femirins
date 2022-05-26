@@ -33,7 +33,7 @@ class Setu:
 
     async def get_setus(self):
         setus = []
-        for API in [Pixiv]:
+        for API in [Lolicon, Pixiv]:
 
             if self.options.quantity_completed < self.options.amount:
                 if self.options.search_pattern != "tag" and API == Lolicon:
