@@ -57,4 +57,4 @@ class Associate:
     def find(cls, keyword: str):
         with Mongo("keywords") as mongo:
             if result := mongo.db.find_one({"keyword": keyword}):
-                return [i["id"] for i in result["associated"]]
+                return [f'^{str(i["id"])}$' for i in result["associated"]]
