@@ -10,6 +10,7 @@ class Config(BaseModel, extra=Extra.ignore):
     setu_maximum: int
     setu_cooling_time: int
     setu_maximum_limit: int
+    group_id: int
     database: str
     proxy: str
 
